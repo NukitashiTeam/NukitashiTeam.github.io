@@ -56,24 +56,52 @@
     .card h3{margin:0 0 8px 0}
     .card p{color:var(--muted);margin:0}
 
+    /* Roadmap Section */
+    .roadmap-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .roadmap-card{background:linear-gradient(135deg, rgba(124,58,237,0.1), rgba(99,102,241,0.05));padding:24px;border-radius:12px;border:1px solid rgba(124,58,237,0.2);position:relative;overflow:hidden}
+    .roadmap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#4f46e5)}
+    .roadmap-card h4{margin:0 0 12px 0;font-size:16px;font-weight:700}
+    .roadmap-card ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.6}
+    .roadmap-card li{margin:8px 0}
+
+    /* MVP Features Section */
+    .mvp-features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+    .mvp-feature{background:var(--card);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px}
+    .mvp-feature-icon{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+    .mvp-feature-content h4{margin:0 0 6px 0;font-size:15px}
+    .mvp-feature-content p{margin:0;color:var(--muted);font-size:13px}
+
     /* CTA strip */
     .cta-strip{margin-top:32px;background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(99,102,241,0.06));padding:20px;border-radius:14px;display:flex;align-items:center;justify-content:space-between}
     .download-buttons{display:flex;gap:12px}
     .download{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);font-weight:700;color:white;text-decoration:none}
 
-    footer{margin-top:40px;padding:22px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    footer{margin-top:40px;padding:22px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+    .footer-content{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+    .footer-left{flex:1}
+    .footer-team{flex:1}
+    .team-members{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .team-member{background:var(--card);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+    .team-member a{color:var(--accent);text-decoration:none;font-weight:600;transition:color 0.2s}
+    .team-member a:hover{color:#4f46e5}
 
     /* Responsive */
     @media (max-width:920px){
       .hero{grid-template-columns:1fr}
       .cards{grid-template-columns:repeat(2,1fr)}
+      .roadmap-cards{grid-template-columns:repeat(2,1fr)}
+      .mvp-features{grid-template-columns:1fr}
       .screen{height:420px}
+      .footer-content{flex-direction:column}
     }
     @media (max-width:560px){
       .cards{grid-template-columns:1fr}
+      .roadmap-cards{grid-template-columns:1fr}
+      .mvp-features{grid-template-columns:1fr}
       nav{display:none}
       .brand h1{font-size:16px}
       .logo{width:44px;height:44px;}
+      .team-members{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -192,6 +220,84 @@
         </div>
       </section>
 
+      <!-- Added Roadmap section with 3 development phases -->
+      <section id="roadmap">
+        <h2 style="font-family:'Playfair Display',serif;margin:0 0 12px 0">Lộ trình phát triển</h2>
+        <p style="color:var(--muted);margin:0 0 18px">Kế hoạch phát triển sản phẩm của nhóm trong 3 giai đoạn chính</p>
+        <div class="roadmap-cards">
+          <div class="roadmap-card">
+            <h4>📦 Giai đoạn 1: Xây dựng GitHub Organization</h4>
+            <ul>
+              <li>Thiết lập repository chính</li>
+              <li>Cấu hình CI/CD pipeline</li>
+              <li>Tạo documentation cơ bản</li>
+              <li>Thiết lập quy trình làm việc nhóm</li>
+            </ul>
+          </div>
+          <div class="roadmap-card">
+            <h4>🎨 Giai đoạn 2: Hoàn thiện Giao diện & Hiệu ứng</h4>
+            <ul>
+              <li>Thiết kế UI/UX chi tiết</li>
+              <li>Phát triển component library</li>
+              <li>Tối ưu animation & transition</li>
+              <li>Testing giao diện trên nhiều thiết bị</li>
+            </ul>
+          </div>
+          <div class="roadmap-card">
+            <h4>⚙️ Giai đoạn 3: Hoàn thiện API & MVP Features</h4>
+            <ul>
+              <li>Phát triển backend API</li>
+              <li>Tích hợp database</li>
+              <li>Triển khai tất cả tính năng MVP</li>
+              <li>Testing & deployment</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Added MVP Features section with 5 key features -->
+      <section id="mvp">
+        <h2 style="font-family:'Playfair Display',serif;margin:0 0 12px 0">Tính năng MVP</h2>
+        <p style="color:var(--muted);margin:0 0 18px">5 tính năng chính trong phiên bản MVP</p>
+        <div class="mvp-features">
+          <div class="mvp-feature">
+            <div class="mvp-feature-icon">F1</div>
+            <div class="mvp-feature-content">
+              <h4>Một-chạm "Phát theo Mood"</h4>
+              <p>Phát nhạc ngay lập tức với 5 mood: Relax, Focus, Deadline, Cheerful, High-energy</p>
+            </div>
+          </div>
+          <div class="mvp-feature">
+            <div class="mvp-feature-icon">F2</div>
+            <div class="mvp-feature-content">
+              <h4>Tạo Playlist Cá nhân</h4>
+              <p>Tạo playlist trong lúc trải nghiệm - tạo ngẫu nhiên hoặc chọn từ playlist gợi ý</p>
+            </div>
+          </div>
+          <div class="mvp-feature">
+            <div class="mvp-feature-icon">F3</div>
+            <div class="mvp-feature-content">
+              <h4>Preset Ngữ cảnh → Mood</h4>
+              <p>Preset tự động: Học bài, Deadline, Thư giãn tối, Đi lại-Gym</p>
+            </div>
+          </div>
+          <div class="mvp-feature">
+            <div class="mvp-feature-icon">F4</div>
+            <div class="mvp-feature-content">
+              <h4>Khởi động Nhanh</h4>
+              <p>Mở app → Tiếp tục mood gần nhất hoặc nhận mood gợi ý</p>
+            </div>
+          </div>
+          <div class="mvp-feature">
+            <div class="mvp-feature-icon">F5</div>
+            <div class="mvp-feature-content">
+              <h4>Đăng nhập - Đăng ký</h4>
+              <p>Hệ thống xác thực người dùng để lưu trữ dữ liệu cá nhân</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="cta-strip" id="download">
         <div>
           <h3 style="margin:0">Sẵn sàng trải nghiệm?</h3>
@@ -205,9 +311,31 @@
 
     </main>
 
+    <!-- Updated footer with team members and GitHub links -->
     <footer>
-      <div>© 2025 Nghe Nhạc Theo Mood · Privacy · Terms</div>
-      <div style="color:var(--muted)">Kết nối: hello@moodmusic.app</div>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div>© 2025 Moody Blue · Privacy · Terms</div>
+          <div style="color:var(--muted);margin-top:8px">Kết nối: <a href="https://nukitashiteam.github.io/?fbclid=IwY2xjawNv9n5leHRuA2FlbQIxMQABHjxNEBVlSKZkRYQVxZb93MFK8r354VXK0OOKDVmE6fMwsq3um3zhJ6-5Y41G_aem__amsm7wR5-zRwAnIpymGKQ" target="_blank" rel="noopener noreferrer">NukitashiTeam</a></div>
+        </div>
+        <div class="footer-team">
+          <div style="font-weight:600;margin-bottom:8px">Đội ngũ phát triển</div>
+          <div class="team-members">
+            <div class="team-member">
+              <a href="https://github.com/khanhpear2004" target="_blank" rel="noopener noreferrer">👤 Lê Nguyễn Nam Khánh</a>
+            </div>
+            <div class="team-member">
+              <a href="https://github.com/KietoKun" target="_blank" rel="noopener noreferrer">👤 Phương Gia Kiệt</a>
+            </div>
+            <div class="team-member">
+              <a href="https://github.com/destroyerkk123" target="_blank" rel="noopener noreferrer">👤 Nguyễn Thành Phát</a>
+            </div>
+            <div class="team-member">
+              <a href="https://github.com/noobcoder123456789" target="_blank" rel="noopener noreferrer">👤 Lô Hoàng Bảo</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
 </body>
