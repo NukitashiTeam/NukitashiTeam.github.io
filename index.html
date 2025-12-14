@@ -28,7 +28,29 @@
     .brand h1{margin:0;font-size:18px}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
     .cta{background:linear-gradient(90deg,var(--accent),#4f46e5);padding:10px 16px;border-radius:10px;color:white;text-decoration:none;font-weight:700}
+        /* Problem Section */
+    .problem-section{margin-top:44px;padding:32px 0;background:linear-gradient(135deg, rgba(124,58,237,0.05), rgba(99,102,241,0.03));border-radius:16px;border:1px solid rgba(124,58,237,0.1)}
+    .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+    .problem-text h2{font-family:'Playfair Display',serif;font-size:32px;margin:0 0 16px 0}
+    .problem-text ul{list-style:none;padding:0;margin:16px 0}
+    .problem-text li{margin:12px 0;display:flex;gap:10px;align-items:start}
+    .problem-text li::before{content:"•";color:var(--accent);font-size:20px}
+    .solution{background:var(--glass);padding:20px;border-radius:12px;margin-top:24px;border:1px solid rgba(124,58,237,0.2)}
 
+    /* Image Carousel */
+    .image-carousel{overflow:hidden;border-radius:16px}
+    .carousel-track{display:flex;gap:12px;animation:scroll 30s linear infinite;width:max-content}
+    .carousel-track:hover{animation-play-state:paused}
+    .carousel-item{flex-shrink:0;width:280px;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+    .carousel-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+    .carousel-item:hover img{transform:scale(1.08)}
+
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    @media (max-width:920px){
+      .problem-grid{grid-template-columns:1fr}
+      .carousel-track{animation:none}
+    }
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:36px}
     .hero-left h2{font-size:34px;margin:0 0 12px 0;line-height:1.02;font-family:'Playfair Display',serif}
@@ -121,7 +143,49 @@
         <a href="#download" class="cta">Tải ngay</a>
       </nav>
     </header>
+        <section class="problem-section container">
+      <div class="problem-grid">
+        <div class="problem-text">
+          <h2>Vấn đề nghe nhạc hàng ngày của sinh viên & người trẻ</h2>
+          <p>Âm nhạc đã trở thành phần không thể thiếu, nhưng việc chọn nhạc phù hợp vẫn còn nhiều bất tiện:</p>
+          <ul>
+            <li>Mất thời gian tìm playlist phù hợp khi học tập, làm việc hay chạy deadline.</li>
+            <li>Khó chọn nhạc nhẹ nhàng/sôi động đúng lúc để lấy lại tinh thần.</li>
+            <li>Không muốn lọc bài hát thủ công, chỉ muốn nghe ngay.</li>
+            <li>Nghe mãi một playlist quen thuộc dẫn đến nhàm chán.</li>
+          </ul>
+          <div class="solution">
+            <h1 style="margin:0 0 12px 0;font-family:'Playfair Display'">Và giải pháp cho vấn đề đó chính là Moody Blue</h1>
 
+            <p style="margin:8px 0 0;font-weight:600">Đối tượng mục tiêu: Sinh viên & người trẻ bận rộn, cần nhạc đồng hành hiệu quả trong học tập, thư giãn và giải trí.</p>
+          </div>
+        </div>
+
+        <div class="image-carousel">
+          <div class="carousel-track" style="animation-duration:40s;">
+            <!-- Lặp 2 lần để carousel mượt -->
+            <div class="carousel-item" style="height:380px;"><img src="https://images.stockcake.com/public/4/b/c/4bc8f4a4-8652-45bb-a0f1-de3fb971ddd5_large/focused-study-session-stockcake.jpg" alt="Sinh viên tập trung học với tai nghe"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://media.istockphoto.com/id/1250195664/photo/smiling-black-girl-with-headset-studying-online-using-laptop.jpg?s=612x612&w=0&k=20&c=Ho0DbSl2P5ELCkVIPyrTniztCwvNrQdJpU3Vzn_0YNk=" alt="Cô gái học online với tai nghe"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-photo/headphones-sports-woman-music-running-600w-2654539229.jpg" alt="Chạy bộ năng lượng cao với nhạc"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.health.com/thmb/3FxwWxg1aS0WncWoxv6Mdcm_siE=/7360x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-668771109-06ad828cd7f74758bd60626689231172.jpg" alt="Thư giãn chill với nhạc buồn"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://thumbs.dreamstime.com/b/angry-young-arab-man-headphones-shouting-laptop-computer-feeling-frustrated-missing-work-project-deadline-angry-young-arab-247108176.jpg" alt="Deadline căng thẳng cần nhạc gấp"></div>
+             <div class="carousel-item" style="height:380px;"><img src="https://media.gettyimages.com/id/523433438/photo/young-friends-hanging-out-together.jpg?s=612x612&w=gi&k=20&c=Vzq5QedbjnNyBKh5XZiwKSlXoPd0apuXt0jRdB8KhA4=" alt="Bạn bè chia sẻ nhạc"></div>
+            <!--<div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-vector/music-player-interface-playlist-view-600w-2681468869.jpg" alt="Giao diện playlist theo mood"></div> -->
+            <!-- <div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-vector/music-app-concept-flat-design-260nw-2509680867.jpg" alt="App nhạc thông minh minh họa"></div> -->
+
+            <!-- Lặp lại để seamless -->
+            <div class="carousel-item" style="height:380px;"><img src="https://images.stockcake.com/public/4/b/c/4bc8f4a4-8652-45bb-a0f1-de3fb971ddd5_large/focused-study-session-stockcake.jpg" alt="Sinh viên tập trung học với tai nghe"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://media.istockphoto.com/id/1250195664/photo/smiling-black-girl-with-headset-studying-online-using-laptop.jpg?s=612x612&w=0&k=20&c=Ho0DbSl2P5ELCkVIPyrTniztCwvNrQdJpU3Vzn_0YNk=" alt="Cô gái học online với tai nghe"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-photo/headphones-sports-woman-music-running-600w-2654539229.jpg" alt="Chạy bộ năng lượng cao với nhạc"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.health.com/thmb/3FxwWxg1aS0WncWoxv6Mdcm_siE=/7360x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-668771109-06ad828cd7f74758bd60626689231172.jpg" alt="Thư giãn chill với nhạc buồn"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://thumbs.dreamstime.com/b/angry-young-arab-man-headphones-shouting-laptop-computer-feeling-frustrated-missing-work-project-deadline-angry-young-arab-247108176.jpg" alt="Deadline căng thẳng cần nhạc gấp"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://media.gettyimages.com/id/523433438/photo/young-friends-hanging-out-together.jpg?s=612x612&w=gi&k=20&c=Vzq5QedbjnNyBKh5XZiwKSlXoPd0apuXt0jRdB8KhA4=" alt="Bạn bè chia sẻ nhạc"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-vector/music-player-interface-playlist-view-600w-2681468869.jpg" alt="Giao diện playlist theo mood"></div>
+            <div class="carousel-item" style="height:380px;"><img src="https://www.shutterstock.com/image-vector/music-app-concept-flat-design-260nw-2509680867.jpg" alt="App nhạc thông minh minh họa"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <main>
       <div class="hero">
         <div class="hero-left">
